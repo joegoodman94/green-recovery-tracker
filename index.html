@@ -67,14 +67,10 @@ $.getJSON("https://spreadsheets.google.com/feeds/list/1-BMFGtUMNJbqYVPkNSZEqpR3I
   
       var i;
       for (i = 0; i < sheetData.length; i++) {
-        var t = $('#greenRecoveryTracker').DataTable();
         var country = data.feed.entry[i]['gsx$country']['$t'];
         var sector = data.feed.entry[i]['gsx$sector']['$t'];
         var subsector = data.feed.entry[i]['gsx$subsector']['$t'];
         const description = data.feed.entry[i]['gsx$description']['$t'].replace( /"/g, '&quot;' );
-        /*const titledescription = data.feed.entry[i]['gsx$description']['$t'].replace( /"/g, '&quot;' );
-        const reactiondescription = data.feed.entry[i]['gsx$reaction']['$t'].replace( /"/g, '&quot;' );*/
-        /*var reaction = data.feed.entry[i]['gsx$reaction']['$t'].replace( /"/g, '&quot;' );*/
         var date = data.feed.entry[i]['gsx$date']['$t'];
         var status = data.feed.entry[i]['gsx$status']['$t'];
         var amountUSD = data.feed.entry[i]['gsx$amountusd']['$t'];
@@ -87,7 +83,7 @@ $.getJSON("https://spreadsheets.google.com/feeds/list/1-BMFGtUMNJbqYVPkNSZEqpR3I
         let mobclip = "1";
         let mobclip2 = "2";
 
-         t.row.add([
+        table.row.add([
           country,
           sector,
           subsector,
@@ -104,21 +100,41 @@ $.getJSON("https://spreadsheets.google.com/feeds/list/1-BMFGtUMNJbqYVPkNSZEqpR3I
       }
 
 
-
     });
 
-$(document).ready(function () {
-  $('[data-toggle="tooltip"]').tooltip();
-
- var table = $('#greenRecoveryTracker').DataTable({
+  var table = $('#greenRecoveryTracker').DataTable({
   lengthChange: false,
-  pageLength: 12,
-
+  pageLength: 12, 
   language:{
     search: "Filter:",
   },
+
+// Add flags to first column when new countries listed. Include new background url in style.css file
+
+  createdRow: function ( row, data, index ) {
+    if (data[0] == 'Germany' ) {
+    $('td', row).eq(0).addClass('de flag');
+    } else if (data[0] == 'European Union' ) {
+    $('td', row).eq(0).addClass('eu flag');
+    } else if (data[0] == 'South Korea' ) {
+    $('td', row).eq(0).addClass('ks flag');
+    } else if (data[0] == 'China' ) {
+    $('td', row).eq(0).addClass('ch flag');
+    } else if (data[0] == 'India' ) {
+    $('td', row).eq(0).addClass('in flag');
+    }
+  },
+// Add tooltip
+
+  drawCallback: function (settings) {
+    $('[data-toggle="tooltip"]').tooltip();
+  },
+
   columnDefs: [
       { bSortable: false, targets: [3, 9, 10, 11] },
+
+// Check screenwidth, and length of data in the 3rd column. Return clipped string with ellipsis if screenwidth under certain width
+
       { targets: 3,
     render: function checkPosition(data, type, row, meta) {
     if (window.matchMedia('(min-width: 401px) and (max-width: 737px)').matches) {
@@ -136,39 +152,10 @@ $(document).ready(function () {
       }
     }
   }
-    ],
-    // Add flags to first column when new countries listed. Include new background url in style.css file
-
-      "createdRow": function ( row, data, index ) {
-            if (data[0] == 'Germany' ) {
-                $('td', row).eq(0).addClass('de flag');
-            } else if (data[0] == 'European Union' ) {
-                $('td', row).eq(0).addClass('eu flag');
-              } else if (data[0] == 'South Korea' ) {
-                $('td', row).eq(0).addClass('ks flag');
-              }
-        },
-        drawCallback: function (settings) {
-      $('[data-toggle="tooltip"]').tooltip();
-        },
-
-        "order": [[ 1, "asc" ]],
-        "lengthMenu": [[12, 24, 48, -1], [12, 24, 48, "All"]],
-
-
-    })
-
- /*$('#dtBasicExample tbody').on('click', 'tr', function () {
-        var data = table.row( this ).data();
-        ( 'You clicked on '+data[0]+'\'s row' );
-    } );*/
-
-  /*$('.dataTables_length').addClass('bs-select');*/
-  
-   /*table.on( 'draw', function () {
-    $('[data-toggle="tooltip"]').tooltip();
-  } );*/
-});
+  ],
+  "order": [[ 1, "asc" ]],
+  "lengthMenu": [[12, 24, 48, -1], [12, 24, 48, "All"]],
+    });
 
 </script>
   </body>

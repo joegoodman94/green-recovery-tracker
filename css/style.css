@@ -179,6 +179,14 @@ td.sorting_1{
     background-image: url('https://www.worldometers.info/img/flags/ks-flag.gif');   
 }
 
+.ch {
+    background-image: url('https://www.worldometers.info/img/flags/ch-flag.gif');
+}
+
+.in {
+    background-image: url('https://www.worldometers.info/img/flags/in-flag.gif');
+}
+
 table{
 	margin: 0 auto;
      width: 100%;
