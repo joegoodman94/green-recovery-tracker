@@ -187,6 +187,10 @@ td.sorting_1{
     background-image: url('https://www.worldometers.info/img/flags/in-flag.gif');
 }
 
+.ir {
+    background-image: url('https://www.worldometers.info/img/flags/ei-flag.gif'); 
+}
+
 table{
 	margin: 0 auto;
      width: 100%;
