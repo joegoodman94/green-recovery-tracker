@@ -191,6 +191,10 @@ td.sorting_1{
     background-image: url('https://www.worldometers.info/img/flags/da-flag.gif');
 }
 
+.uk {
+    background-image: url('https://www.worldometers.info/img/flags/uk-flag.gif');
+}
+
 table{
 	margin: 0 auto;
      width: 100%;
