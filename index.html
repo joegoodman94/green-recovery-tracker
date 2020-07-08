@@ -137,6 +137,8 @@ $.getJSON("https://spreadsheets.google.com/feeds/list/1-BMFGtUMNJbqYVPkNSZEqpR3I
 
   columnDefs: [
       { bSortable: false, targets: [3, 9, 10, 11] },
+    
+// Numeric sorting for strings using Natural plugin
       { type: 'natural', targets: [6, 7] },
 
 // Check screenwidth, and length of data in the 3rd column. Return clipped string with ellipsis if screenwidth under certain width
