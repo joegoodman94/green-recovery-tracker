@@ -11,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/addons/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.16/sorting/natural.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Sans+Narrow&family=PT+Serif&display=swap" rel="stylesheet">
     
 </head>
@@ -136,6 +137,7 @@ $.getJSON("https://spreadsheets.google.com/feeds/list/1-BMFGtUMNJbqYVPkNSZEqpR3I
 
   columnDefs: [
       { bSortable: false, targets: [3, 9, 10, 11] },
+      { type: 'natural', targets: [6, 7] },
 
 // Check screenwidth, and length of data in the 3rd column. Return clipped string with ellipsis if screenwidth under certain width
 
