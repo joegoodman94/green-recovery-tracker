@@ -195,6 +195,27 @@ td.sorting_1{
     background-image: url('https://www.worldometers.info/img/flags/uk-flag.gif');
 }
 
+.fr {
+    background-image: url('https://www.worldometers.info/img/flags/fr-flag.gif');
+}
+
+.fi {
+    background-image: url('https://www.worldometers.info/img/flags/fi-flag.gif');
+}
+
+.it {
+    background-image: url('https://www.worldometers.info/img/flags/it-flag.gif');
+}
+
+
+.ni {
+    background-image: url('https://www.worldometers.info/img/flags/ni-flag.gif');
+}
+
+.ag {
+    background-image: url('https://www.worldometers.info/img/flags/ag-flag.gif');
+}
+
 table{
 	margin: 0 auto;
      width: 100%;
