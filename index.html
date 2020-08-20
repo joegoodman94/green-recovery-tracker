@@ -138,7 +138,11 @@ $.getJSON("https://spreadsheets.google.com/feeds/list/1-BMFGtUMNJbqYVPkNSZEqpR3I
     } else if (data[0] == 'Algeria' ) {
     $('td', row).eq(0).addClass('ag flag');
     } else if (data[0] == 'New Zealand' ) {
-    $('td', row).eq(0).addClass('nz flag');     
+    $('td', row).eq(0).addClass('nz flag');  
+    } else if (data[0] == 'Spain' ) {
+    $('td', row).eq(0).addClass('es flag');
+    } else if (data[0] == 'Ireland' ) {
+    $('td', row).eq(0).addClass('ie flag');
     }
   },
 // Add tooltip
