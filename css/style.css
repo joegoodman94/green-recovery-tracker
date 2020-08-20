@@ -219,6 +219,14 @@ td.sorting_1{
     background-image: url('https://www.worldometers.info/img/flags/nz-flag.gif');
 }
 
+.ei {
+    background-image: url('https://www.worldometers.info/img/flags/ei-flag.gif');
+}
+
+.sp {
+    background-image: url('https://www.worldometers.info/img/flags/sp-flag.gif');
+}
+
 table{
 	margin: 0 auto;
      width: 100%;
